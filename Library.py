@@ -32,11 +32,15 @@ def upper(arg):
     return arg.upper()
 
 
+# The `int | float` syntax requires Python 3.10. Import `Union` from
+# `typing` and use `Union[int, float]` with earlier.
 def should_be_positive(number: int | float):
     if number <= 0:
         raise AssertionError(f'{number} is not positive')
 
 
+# Literal conversion is new in Robot Framework 7.0. No conversion is
+# done with earlier versions.
 def mimmit(action: Literal['koodaa', 'bailaa']):
     print(f'Mimmit {action}!')
 
